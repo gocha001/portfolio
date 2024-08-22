@@ -1,0 +1,168 @@
+.covers-section {
+  max-width: 375px;
+  height: 508px;
+  background-image: url('/img/covers/cover-mobile@1x.webp');
+  background-color: var(--background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.covers-section .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.covers-marquee {
+  position: relative;
+  width: 100%;
+  height: 508px;
+  overflow: hidden;
+}
+
+.covers-marquee-inner {
+  position: absolute;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.covers-marquee-line {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: center;
+  width: 900%;
+  transform: rotate(16deg);
+}
+
+.covers-marquee-picture {
+  display: block;
+  width: 282px;
+  height: 162px;
+}
+
+.covers-marquee-img {
+  width: 282px;
+  height: 162px;
+  margin: 0;
+  animation-name: marquee;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-play-state: paused;
+}
+
+.animate-covers .covers-marquee-img {
+  animation-play-state: running;
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 375px),
+  screen and (min-resolution: 2dppx) and (max-width: 375px),
+  screen and (min-device-pixel-ratio: 2) and (max-width: 375px) {
+  .covers-section {
+    background-image: url('/img/covers/cover-mobile@2x.webp');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .covers-section {
+    max-width: 768px;
+    background-image: url('/img/covers/cover-tablet@1x.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 960px;
+  }
+
+  .covers-marquee {
+    height: 960px;
+  }
+
+  .covers-marquee-inner {
+    gap: 32px;
+  }
+
+  .covers-marquee-line {
+    gap: 32px;
+  }
+
+  .covers-marquee-picture,
+  .covers-marquee-img {
+    width: 544px;
+    height: 314px;
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px),
+  screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .covers-section {
+    background-image: url('/img/covers/cover-tablet@2x.webp');
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .covers-section {
+    min-width: 1440px;
+    background-image: url('/img/covers/cover-desktop@1x.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 960px;
+  }
+
+  .covers-marquee {
+    position: relative;
+    width: 100%;
+    height: 960px;
+    overflow: hidden;
+  }
+
+  .covers-marquee-inner {
+    gap: 32px;
+    top: -200px;
+  }
+
+  .covers-marquee-line {
+    width: 400%;
+    gap: 32px;
+    height: 314px;
+  }
+
+  .covers-marquee-picture {
+    display: block;
+    width: 544px;
+  }
+
+  .covers-marquee-img {
+    width: 544px;
+    height: 314px;
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 1439px),
+  screen and (min-resolution: 2dppx) and (max-width: 1439px),
+  screen and (min-device-pixel-ratio: 2) and (max-width: 1439px) {
+  .covers-section {
+    background-image: url('/img/covers/cover-desktop@2x.webp');
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(350%);
+  }
+
+  to {
+    transform: translateX(-230%);
+  }
+}
